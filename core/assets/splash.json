@@ -1,0 +1,27 @@
+{
+	"fonts" : [
+	    {
+	        "file": "fonts/loading.ttf",
+	        "name": "splash_loading.ttf",
+	        "size": 30,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/title.ttf",
+	        "name": "splash_title.ttf",
+	        "size": 100,
+	        "r": 1,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    }
+	],
+	"textures" : [
+		{
+			"file" : "images/splash.png"
+		}
+	]
+}

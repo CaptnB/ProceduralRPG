@@ -1,0 +1,194 @@
+
+characters.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+PFAmiri_02_hi
+  rotate: false
+  xy: 1, 1600
+  size: 400, 398
+  orig: 400, 398
+  offset: 0, 0
+  index: -1
+PFDopara_02_hi
+  rotate: false
+  xy: 1, 1200
+  size: 400, 398
+  orig: 400, 398
+  offset: 0, 0
+  index: -1
+PFHarsk_02_hi
+  rotate: false
+  xy: 403, 1600
+  size: 400, 398
+  orig: 400, 398
+  offset: 0, 0
+  index: -1
+PFHayato_02_hi
+  rotate: false
+  xy: 1, 800
+  size: 400, 398
+  orig: 400, 398
+  offset: 0, 0
+  index: -1
+PFImrijka_02_hi
+  rotate: false
+  xy: 403, 1200
+  size: 400, 398
+  orig: 400, 398
+  offset: 0, 0
+  index: -1
+PFSajan_02_hi
+  rotate: false
+  xy: 805, 1600
+  size: 400, 398
+  orig: 400, 398
+  offset: 0, 0
+  index: -1
+PFSeoni_02_hi
+  rotate: false
+  xy: 1, 400
+  size: 400, 398
+  orig: 400, 398
+  offset: 0, 0
+  index: -1
+PFalahazra_02_hi
+  rotate: false
+  xy: 403, 801
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFalain_02_hi
+  rotate: false
+  xy: 805, 1201
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFallevrah_02_hi
+  rotate: false
+  xy: 1207, 1601
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFameiko_02_hi
+  rotate: false
+  xy: 1, 1
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFBalazar_02_hi
+  rotate: false
+  xy: 403, 402
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFDamiel_02_hi
+  rotate: false
+  xy: 805, 802
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFEzren_02_hi
+  rotate: false
+  xy: 1207, 1202
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFFeiya_02_hi
+  rotate: false
+  xy: 1609, 1601
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFKyra_02_hi
+  rotate: false
+  xy: 403, 3
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFLem_02_hi
+  rotate: false
+  xy: 805, 403
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFLini_02_hi
+  rotate: false
+  xy: 1207, 803
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFLirianne_02_hi
+  rotate: false
+  xy: 1609, 1202
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFLyssa_02_hi
+  rotate: false
+  xy: 2011, 1601
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFReiko_02_hi
+  rotate: false
+  xy: 805, 4
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFSeelah_02_hi
+  rotate: false
+  xy: 1207, 404
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFSeltyiel_02_hi
+  rotate: false
+  xy: 1609, 803
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFShalelu_02_hi
+  rotate: false
+  xy: 2011, 1202
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFUlf_02_hi
+  rotate: false
+  xy: 2413, 1601
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFValeros_02_hi
+  rotate: false
+  xy: 1207, 5
+  size: 400, 397
+  orig: 400, 397
+  offset: 0, 0
+  index: -1
+PFMerisiel_02_hi
+  rotate: false
+  xy: 1609, 405
+  size: 400, 396
+  orig: 400, 396
+  offset: 0, 0
+  index: -1

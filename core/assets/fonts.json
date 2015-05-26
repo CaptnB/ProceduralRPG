@@ -1,0 +1,86 @@
+{
+	"fonts" : 
+	[
+	    {
+	        "file": "fonts/text1.ttf",
+	        "name": "text1_10.ttf",
+	        "size": 10,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text1.ttf",
+	        "name": "text1_20.ttf",
+	        "size": 20,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text1.ttf",
+	        "name": "text1_30.ttf",
+	        "size": 30,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text2.ttf",
+	        "name": "text2_10.ttf",
+	        "size": 10,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text2.ttf",
+	        "name": "text2_20.ttf",
+	        "size": 20,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text2.ttf",
+	        "name": "text2_30.ttf",
+	        "size": 30,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text3.ttf",
+	        "name": "text3_10.ttf",
+	        "size": 10,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text3.ttf",
+	        "name": "text3_20.ttf",
+	        "size": 20,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    },
+	    {
+	        "file": "fonts/text3.ttf",
+	        "name": "text3_30.ttf",
+	        "size": 30,
+	        "r": 0,
+	        "g": 0,
+	        "b": 0,
+	        "a": 1
+	    }
+	]
+}
