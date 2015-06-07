@@ -87,7 +87,8 @@ public class MapScreen extends GameScreen
     
     private boolean showTerrain = true;
     private boolean showHostility = true;
-    private int scale = 1;
+    private int zoom = 1;
+    private double scale = 0.01;
 
     public MapScreen(Game game, AssetManager assets, SpriteBatch batch)
     {
@@ -97,8 +98,8 @@ public class MapScreen extends GameScreen
         grayScale.addColorLevel(1.0, Color.BLACK, Color.WHITE);
         
         colorMap = new ColorMap();
-        colorMap.addColorLevel(0.40, new Color(0x011F4BFF), new Color(0x005B96FF));
-        colorMap.addColorLevel(0.45, new Color(0xD7C797FF), new Color(0xA47C48FF));
+        colorMap.addColorLevel(0.30, new Color(0x011F4BFF), new Color(0x005B96FF));
+        colorMap.addColorLevel(0.35, new Color(0xD7C797FF), new Color(0xA47C48FF));
         colorMap.addColorLevel(0.60, new Color(0x789A5FFF), new Color(0x416624FF));
         colorMap.addColorLevel(0.75, new Color(0x605245FF), new Color(0x766E6EFF));
         colorMap.addColorLevel(1.00, new Color(0xCECECEFF), new Color(0xFFFFFFFF));
@@ -126,6 +127,14 @@ public class MapScreen extends GameScreen
                 {
                     switch(keycode)
                     {
+                    case Input.Keys.I:
+                        scale /= 2.0;
+                        fillPixmap();
+                        return true;
+                    case Input.Keys.D:
+                        scale *= 2.0;
+                        fillPixmap();
+                        return true;
                     case Input.Keys.T:
                         showTerrain = !showTerrain;
                         fillPixmap();
@@ -135,16 +144,16 @@ public class MapScreen extends GameScreen
                         fillPixmap();
                         return true;
                     case Input.Keys.PLUS:
-                        if(scale <= 32)
+                        if(zoom <= 32)
                         {
-                            scale *= 2;
+                            zoom *= 2;
                             rescale();
                         }
                         return true;
                     case Input.Keys.MINUS:
-                        if(scale >= 2)
+                        if(zoom >= 2)
                         {
-                            scale /= 2;
+                            zoom /= 2;
                             rescale();
                         }
                         return true;
@@ -160,7 +169,7 @@ public class MapScreen extends GameScreen
     public void render(float delta)
     {
         batch.begin();
-        if(scale > 1)
+        if(zoom > 1)
         {
             batch.draw(region, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
@@ -187,8 +196,9 @@ public class MapScreen extends GameScreen
         {
             for(int y = 0; y < pixmap.getHeight(); ++y)
             {
-                double hostility = hostilityMap.eval_octaves(x, y, 0.005, 4, 0.5);
-                double terrain = terrainMap.eval_octaves(x, y, 0.01, 8, 0.5);
+                double hostility = hostilityMap.eval_octaves(x, y, scale / 2.0, 4, 0.5);
+                double terrain = terrainMap.eval_octaves(x, y, scale, 8, 0.5);
+                terrain *= terrain;
                 int color = getColor(hostility, terrain);
                 pixmap.drawPixel(x, y, color);
             }
@@ -201,8 +211,8 @@ public class MapScreen extends GameScreen
     
     private void rescale()
     {
-        int w = texture.getWidth() / scale;
-        int h = texture.getHeight() / scale;
+        int w = texture.getWidth() / zoom;
+        int h = texture.getHeight() / zoom;
         int x = (texture.getWidth() - w) / 2;
         int y = (texture.getHeight() - h) / 2;
         
@@ -218,7 +228,7 @@ public class MapScreen extends GameScreen
             
             if(showHostility)
             {
-                double tint = 1.0 + ((hostility - 0.5) * 0.75);
+                double tint = 0.5 + ((1.0 - hostility) / 2.0);
                 color = color.mul((float)tint);             
             }
         }
