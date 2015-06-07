@@ -9,19 +9,16 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 public class NewGameScreen extends GameScreen
 {
     private Sound sound;
     private Music music;
-    private Stage stage;
 
     public NewGameScreen(Game game, AssetManager manager, SpriteBatch batch)
     {
@@ -31,7 +28,6 @@ public class NewGameScreen extends GameScreen
     @Override
     public void show()
     {
-        stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         
         sound = Gdx.audio.newSound(Gdx.files.internal("sounds/test_sound.mp3"));
@@ -74,11 +70,23 @@ public class NewGameScreen extends GameScreen
                 }
             }
         );
+        
+        TextButton newGameBtn = new TextButton("New Game", style);
+        newGameBtn.addListener(new ClickListener()
+            {
+                @Override
+                public void clicked(InputEvent event, float x, float y)
+                {
+                    game.setScreen(new MapScreen(game, assets, batch));
+                }
+            }
+        );
 
         table.add(soundBtn).align(Align.topRight).pad(10).expand();
         table.add(musicBtn).align(Align.topRight).pad(10);
         table.row().expand();
-        //table.setDebug(true);
+        table.add(newGameBtn);
+        table.setDebug(true);
     }
 
     @Override
