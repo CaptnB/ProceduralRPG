@@ -18,7 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.captnb.proceduralrpg.OpenSimplexNoise;
 
-public class MapScreen extends GameScreen
+public class MapScreen extends AbstractScreen
 {
     private class ColorMap
     {
@@ -90,9 +90,9 @@ public class MapScreen extends GameScreen
     private int zoom = 1;
     private double scale = 0.01;
 
-    public MapScreen(Game game, AssetManager assets, SpriteBatch batch)
+    public MapScreen(Game game, AssetManager assets)
     {
-        super(game, assets, batch);
+        super(game, assets);
         
         grayScale = new ColorMap();
         grayScale.addColorLevel(1.0, Color.BLACK, Color.WHITE);
@@ -108,10 +108,9 @@ public class MapScreen extends GameScreen
     }
 
     @Override
-    public void show()
+    protected void build()
     {
-        Gdx.input.setInputProcessor(stage);
-        stage.addListener(new ClickListener()
+        addListener(new ClickListener()
             {
                 @Override
                 public void clicked (InputEvent event, float x, float y)
@@ -120,7 +119,7 @@ public class MapScreen extends GameScreen
                 }
             }
         );
-        stage.addListener(new InputListener()
+        addListener(new InputListener()
             {
                 @Override
                 public boolean keyUp(InputEvent event, int keycode)
@@ -165,20 +164,18 @@ public class MapScreen extends GameScreen
         );
     }
 
-    @Override
-    public void render(float delta)
-    {
-        batch.begin();
-        if(zoom > 1)
-        {
-            batch.draw(region, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        }
-        else
-        {
-            batch.draw(texture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        }
-        batch.end();
-    }
+//    @Override
+//    public void draw()
+//    {
+//        if(zoom > 1)
+//        {
+//            batch.draw(region, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+//        }
+//        else
+//        {
+//            batch.draw(texture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+//        }
+//    }
     
     private void generateMap()
     {

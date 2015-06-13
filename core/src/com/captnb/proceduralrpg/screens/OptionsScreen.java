@@ -2,25 +2,17 @@ package com.captnb.proceduralrpg.screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class OptionsScreen extends GameScreen
+public class OptionsScreen extends AbstractScreen
 {
 
-    public OptionsScreen(Game game, AssetManager manager, SpriteBatch batch)
+    public OptionsScreen(Game game, AssetManager manager)
     {
-        super(game, manager, batch);
+        super(game, manager);
     }
 
     @Override
-    public void show()
-    {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void render(float delta)
+    protected void build()
     {
         // TODO Auto-generated method stub
 

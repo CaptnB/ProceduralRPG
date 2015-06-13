@@ -5,9 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -15,29 +13,24 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 
-public class NewGameScreen extends GameScreen
+public class NewGameScreen extends AbstractScreen
 {
-    private Sound sound;
-    private Music music;
+    private Sound sound = Gdx.audio.newSound(Gdx.files.internal("sounds/test_sound.mp3"));
+    private Music music = Gdx.audio.newMusic(Gdx.files.internal("music/test_music.mp3"));
 
-    public NewGameScreen(Game game, AssetManager manager, SpriteBatch batch)
+    public NewGameScreen(Game game, AssetManager assets)
     {
-        super(game, manager, batch);
+        super(game, assets);
     }
 
     @Override
-    public void show()
+    public void build()
     {
-        Gdx.input.setInputProcessor(stage);
-        
-        sound = Gdx.audio.newSound(Gdx.files.internal("sounds/test_sound.mp3"));
-        music = Gdx.audio.newMusic(Gdx.files.internal("music/test_music.mp3"));
         music.setLooping(true);
-        
 
         Table table = new Table();
         table.setFillParent(true);
-        stage.addActor(table);
+        addActor(table);
         
         TextButtonStyle style = new TextButtonStyle();
         style.font = assets.get("text1_30.ttf", BitmapFont.class);
@@ -77,7 +70,7 @@ public class NewGameScreen extends GameScreen
                 @Override
                 public void clicked(InputEvent event, float x, float y)
                 {
-                    game.setScreen(new MapScreen(game, assets, batch));
+                    game.setScreen(new MapScreen(game, assets));
                 }
             }
         );
@@ -88,27 +81,13 @@ public class NewGameScreen extends GameScreen
         table.add(newGameBtn);
         table.setDebug(true);
     }
-
-    @Override
-    public void render(float delta)
-    {
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        stage.act(delta);
-        stage.draw();
-//
-//        batch.begin();
-//        batch.end();
-    }
     
-    @Override
-    public void resize(int width, int height)
-    {
-        stage.getViewport().update(width, height);
-    }
-
     @Override
     public void dispose()
     {
-        stage.dispose();
+        super.dispose();
+        music.dispose();
+        sound.dispose();
     }
+
 }
